@@ -1,9 +1,14 @@
+Vue.component('li-component', {
+    template: `<li v-on:click="$emit('remove')">{{index + 1}} : {{ value }}</li>`,
+    props: ['value', 'index']
+})
+
 new Vue({
     el: '#Vue-app',
     data: {
         hobbies: ['dreaming', 'drone', 'racing drones', 'drones from terminator'],
         userInput: '',
-        message: '',
+        messageWhenDelete: '',
     },
     methods: {
         addHobbies: function() {
@@ -14,14 +19,10 @@ new Vue({
             this.hobbies.push(newHobby);
             console.log(this.hobbies);
         },
-        remove(hobby) {
-            for (var i = 0; i < this.hobbies.length; i++) {
-                if (this.hobbies[i] == hobby) {
-                    this.hobbies.splice(i, 1);
-                    this.message = 'Hobby Deleted!';
-                    break;
-                }
-            }
+        remove(hobby, index) {
+            console.log(index);
+            this.hobbies.splice(index, 1);
+            this.messageWhenDelete = 'Hobby "' + hobby + '" Deleted!';
         },
         getColor() {
             if (this.hobbies.length < 3) return 'yellow';

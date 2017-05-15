@@ -2,14 +2,17 @@
 <script src="https://cdn.jsdelivr.net/lodash/4.17.4/lodash.core.min.js"></script>
 
 <div id="Vue-app">
-    <p>{{message}}</p>
+    <p>{{messageWhenDelete}}</p>
     <p  v-bind:style="{backgroundColor: getColor()}">
         Hobbies: {{ hobbies.length }}</p>
     <input type="text" v-model="userInput">
     <button v-on:click="addHobbies">add hobby</button>
     <ul>
-        <li v-for="hobby in hobbies"
-            v-on:click="remove(hobby)">{{ hobby }}</li>
+        <li-component v-for="(hobby, index) in hobbies"
+                      v-on:remove="remove(hobby, index)"
+                      v-bind:value="hobby"
+                      v-bind:index="index"
+                      v-bind:key="hobby.id"></li-component>
     </ul>
 </div>
 <!--

@@ -9,6 +9,7 @@ new Vue({
         hobbies: ['dreaming', 'drone', 'racing drones', 'drones from terminator'],
         userInput: '',
         messageWhenDelete: '',
+        hobbyWasDeleted: false
     },
     methods: {
         addHobbies: function() {
@@ -17,12 +18,14 @@ new Vue({
             }
             var newHobby = this.userInput;
             this.hobbies.push(newHobby);
+            this.hobbyWasDeleted = false;
             console.log(this.hobbies);
         },
         remove(hobby, index) {
             console.log(index);
             this.hobbies.splice(index, 1);
             this.messageWhenDelete = 'Hobby "' + hobby + '" Deleted!';
+            this.hobbyWasDeleted = true;
         },
         getColor() {
             if (this.hobbies.length < 3) return 'yellow';

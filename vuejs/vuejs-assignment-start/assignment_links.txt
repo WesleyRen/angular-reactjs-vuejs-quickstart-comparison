@@ -1,0 +1,10 @@
+<html>
+start: 
+Problem  Code  on  JSFiddle:  https://jsfiddle.net/smax/tkn7pdev/
+Hint:
+To  remove  a  hobby,  you  can  find  the  position  of  an  element  with  the  indexOf method  which  
+you  can  use  on  any  JavaScript  array.  You  may  then  use  the  splice() method  on  an  array,  to  
+splice  1  element,  starting  at  position  X  like  this  =>  splice(X,1)
+
+finished: https://jsfiddle.net/smax/amwrw0h1/
+</html>

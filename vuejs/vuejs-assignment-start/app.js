@@ -6,7 +6,7 @@ Vue.component('li-component', {
 new Vue({
     el: '#Vue-app',
     data: {
-        hobbies: ['dreaming', 'drone', 'racing drones', 'drones from terminator'],
+        hobbies: ['fishing', 'soccer'],
         userInput: '',
         messageWhenDelete: '',
         hobbyWasDeleted: false

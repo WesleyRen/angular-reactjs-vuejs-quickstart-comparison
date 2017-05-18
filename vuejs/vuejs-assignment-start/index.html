@@ -4,8 +4,8 @@
 
 <div id="Vue-app">
     <p v-if="hobbyWasDeleted">{{messageWhenDelete}}</p>
-    <!--             v-bind:style="{backgroundColor: getColor()}" -->
-    <p  v-bind:class="{'multiple-hobbies': hobbies.length > 3}">
+    <p  v-bind:class="{'multiple-hobbies': hobbies.length > 3}"
+        v-bind:style="{backgroundColor: getColor()}">
         Hobbies: {{ hobbies.length }}</p>
     <input type="text" v-model="userInput">
     <button v-on:click="addHobbies">add hobby</button>

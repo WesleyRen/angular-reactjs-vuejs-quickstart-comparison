@@ -1,0 +1,16 @@
+<app-username [username]="'Chris'" (userClicked)="onUserClicked($event)"></app-username>
+<app-username [username]="'Anna'" (userClicked)="onUserClicked($event)"></app-username>
+
+<p [ngClass]="{updated: name != 'Wes'}">
+  {{name}}
+</p>
+<p *ngIf="name != 'Wes'">Name updated!</p>
+<button (click)="changeName()">Change Name</button>
+<button (click)="addElements()">New Element</button>
+<ul>
+  <li *ngFor="let el of elements"
+      [id]="'element ' + el"
+      [ngStyle]="{backgroundColor: getColor(el)}">Element {{ el }}</li>
+</ul>
+<input type="text" [(ngModel)]="message"/>
+<p>{{ message }}</p>

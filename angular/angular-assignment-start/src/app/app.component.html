@@ -15,6 +15,6 @@
 <button (click)="addHobby()">Add Hobby</button>
 <ul>
   <app-hobby *ngFor="let hobby of hobbies; let i = index;"
-      [hobby]="hobby" [index]="i"
+      [hobbyInput]="hobby" [indexInput]="i"
       (hobbyClicked)="removeHobby($event)">{{ i + 1 }} : {{ hobby }}</app-hobby>
 </ul>
